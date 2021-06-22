@@ -237,4 +237,50 @@ Dim Sh As Worksheet
 
 End Sub
 
+---------------------------------------------
 
+Sub Check()
+'
+' Check Macro
+'
+
+'
+    Sheets("FeedExecSum").Select
+    ActiveWorkbook.SlicerCaches("Slicer_Campaign2").ClearManualFilter
+    ActiveWorkbook.SlicerCaches("Slicer_CAMPAIGN3").ClearManualFilter
+    Sheets("Executive Summary 2020").Select
+    Range("A4").Select
+End Sub
+Sub Uncheck()
+'
+' Uncheck Macro
+'
+
+'
+    Sheets("FeedExecSum").Select
+    ActiveWorkbook.SlicerCaches("Slicer_Campaign2").VisibleSlicerItemsList = Array _
+        ( _
+        "[Table2].[Campaign].&[Cancel B4 Install]")
+    ActiveWorkbook.SlicerCaches("Slicer_CAMPAIGN3").VisibleSlicerItemsList = Array _
+        ( _
+        "[Table1].[CAMPAIGN].&[Saved Cart]", "[Table1].[CAMPAIGN].&[SISFA Call Center]" _
+        , "[Table1].[CAMPAIGN].&[SISFA Store Visit]")
+    Sheets("Executive Summary 2020").Select
+    Range("A4").Select
+End Sub
+
+-----------------------------------------------------------
+Sub UnhideSheetsforReportUpdate()
+'
+' UnhideSheetsforReportUpdate Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+W
+'
+
+    Sheets("EM DATA").Visible = True
+    Sheets("DM DATA").Visible = True
+    Sheets("DM Tables").Visible = True
+    Sheets("EM Tables").Visible = True
+    Sheets("VLOOKUPs").Visible = True
+End Sub
+---------------------------------------------------------------
